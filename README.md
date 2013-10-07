@@ -1,4 +1,8 @@
-blogpress
+Blogpress
 =========
+This is the blog for TeamGoblin.com. 
 
-Blog Wordpress Site
+
+Maintained by: Zhia Chong (zchong)
+Date: 10/6/2013
+
