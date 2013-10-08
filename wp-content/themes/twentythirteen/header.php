@@ -41,10 +41,10 @@
                     <?php get_search_form(); ?>
                 </nav><!-- #site-navigation -->
             </div><!-- #navbar -->
-            <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+            <div class="home-link" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                <h1 class="site-title"><a id="site-home-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-            </a>
+            </div>
 
 		</header><!-- #masthead -->
 

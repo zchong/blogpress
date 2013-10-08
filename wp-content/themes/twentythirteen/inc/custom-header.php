@@ -23,7 +23,7 @@ function twentythirteen_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '220e10',
-		'default-image'          => '%s/images/headers/circle.png',
+		'default-image'          => '%s/images/headers/goblin.png',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 230,
@@ -98,7 +98,7 @@ function twentythirteen_header_style() {
 	?>
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
-			background-size: 1600px auto;
+			background-size: 600px auto;
 		}
 	<?php
 		endif;

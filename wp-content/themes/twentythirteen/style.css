@@ -117,6 +117,15 @@ a {
 	text-decoration: none;
 }
 
+#site-home-title {
+    color: #0f3647;
+}
+
+#site-home-title:hover
+{
+    color: #3495BF;
+}
+
 a:visited {
 	color: #ac0404;
 }
@@ -131,9 +140,6 @@ a:hover {
 	outline: 0;
 }
 
-a:hover {
-	text-decoration: underline;
-}
 
 h1,
 h2,
@@ -809,22 +815,18 @@ img.wp-smiley,
 	display: block;
 	margin: 0 auto;
 	max-width: 1080px;
-	min-height: 230px;
+	min-height: 10px;
 	padding: 0 20px;
 	text-decoration: none;
 	width: 100%;
-}
-
-.site-header .site-title:hover {
-	text-decoration: underline;
 }
 
 .site-title {
 	font-size: 60px;
 	font-weight: bold;
 	line-height: 1;
-	margin: 0;
-	padding: 58px 0 10px;
+	margin: 500px 0px 0px 0px;
+	padding: 0px;
 }
 
 .site-description {
