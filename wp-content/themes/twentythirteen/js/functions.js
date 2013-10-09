@@ -48,6 +48,30 @@
 		} );
 	} )();
 
+    /**
+     * Enables fixed scrolling navigation bar
+     */
+    ( function() {
+        var aboveHeight = $('header').outerHeight();
+        $(window).scroll(function() {
+
+                if ($(window).scrollTop() > aboveHeight)
+                {
+                }
+                else if ($(window).scrollTop())
+                {
+                    $('#navbar').addClass('fixed').css('top','0').next()
+                        .css('padding-top','45px');
+                }
+                else
+                {
+                    $('#navbar').removeClass('fixed').next().css('padding-top', '0px');
+                }
+            }
+
+        )
+    })();
+
 	/**
 	 * Makes "skip to content" link work correctly in IE9 and Chrome for better
 	 * accessibility.
