@@ -118,7 +118,7 @@ a {
 }
 
 #site-home-title {
-    color: #0f3647;
+    color: #0f3648;
 }
 
 #site-home-title:hover
@@ -770,7 +770,7 @@ img.wp-smiley,
  */
 
 .site {
-	background-color: #fff;
+    background: url(images/bg.jpg) repeat scroll top ;
 	border-left: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
 	margin: 0 auto;
@@ -863,6 +863,7 @@ div.nav-menu > ul {
 }
 
 .nav-menu li a {
+    font: 400 20px "Open Sans", Helvetica, sans-serif;
 	color: #141412;
 	display: block;
 	font-size: 15px;

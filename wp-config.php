@@ -79,6 +79,7 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', false);
+define('CUSTOM', true); //we are in custom mode
 
 /* That's all, stop editing! Happy blogging. */
 

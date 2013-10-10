@@ -138,6 +138,11 @@ function twentythirteen_fonts_url() {
 		if ( 'off' !== $bitter )
 			$font_families[] = 'Bitter:400,700';
 
+        if (CUSTOM)
+        {
+            $font_families[] = 'Open Sans:400,300,700';
+        }
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
