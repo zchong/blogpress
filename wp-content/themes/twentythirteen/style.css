@@ -770,7 +770,6 @@ img.wp-smiley,
  */
 
 .site {
-    background: url(images/bg.jpg) repeat scroll top ;
 	border-left: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
 	margin: 0 auto;
@@ -2098,7 +2097,6 @@ footer.entry-meta {
 .must-log-in,
 .comment-respond .comment-form,
 .comment-respond iframe {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 604px;
@@ -2247,6 +2245,7 @@ footer.entry-meta {
 
 /* Comment form */
 .comment-respond {
+    border-radius: 24px;
 	background-color: #f7f5e7;
 	padding: 30px 0;
 }
@@ -2406,7 +2405,8 @@ footer.entry-meta {
  */
 
 .widget {
-	background-color: rgba(247, 245, 231, 0.7);
+    background-color: rgba(247, 245, 231, 0.5);
+    border-radius: 24px;
 	font-size: 14px;
 	-webkit-hyphens: auto;
 	-moz-hyphens:    auto;
