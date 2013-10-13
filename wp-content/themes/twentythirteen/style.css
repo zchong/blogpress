@@ -119,6 +119,8 @@ a {
 
 #site-home-title {
     color: #0f3648;
+    -webkit-transition: color 250ms linear 0ms;
+    transition:         color 250ms linear 0ms;
 }
 
 #site-home-title:hover
@@ -465,6 +467,23 @@ hr {
 	border: 0;
 	height: 1px;
 	margin: 0 0 24px;
+}
+
+#header-separator{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+    border-image: none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 
@@ -2396,6 +2415,7 @@ footer.entry-meta {
 .site-main .widget-area {
 	float: right;
 	width: 300px;
+    margin-top: 70px;
 }
 
 
