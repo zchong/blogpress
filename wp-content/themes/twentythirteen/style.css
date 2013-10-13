@@ -860,7 +860,7 @@ div.nav-menu > ul {
 	display: inline-block;
 	position: relative;
 }
-
+/* control navigation */
 .nav-menu li a {
     font: 400 20px "Open Sans", Helvetica, sans-serif;
 	color: #141412;
