@@ -2564,7 +2564,7 @@ footer.entry-meta {
 
 .site-footer .widget {
 	background: transparent;
-	color: #fff;
+	color: #001101;
 	float: left;
 	margin-right: 20px;
 	width: 245px;
@@ -2581,6 +2581,13 @@ footer.entry-meta {
 
 .site-footer .widget a {
 	color: #e6402a;
+}
+.site-footer .widget a:hover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: #ffffff;
 }
 
 .site-footer .widget-title,
