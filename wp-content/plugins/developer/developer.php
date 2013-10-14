@@ -5,7 +5,7 @@
 Plugin Name:  Developer
 Plugin URI:   http://wordpress.org/extend/plugins/developer/
 Description:  The first stop for every WordPress developer
-Version:      1.2.3
+Version:      1.2.4
 Author:       Automattic
 Author URI:   http://automattic.com
 License:      GPLv2 or later
@@ -25,7 +25,7 @@ class Automattic_Developer {
 	public $settings               = array();
 	public $default_settings       = array();
 
-	const VERSION                  = '1.2.2';
+	const VERSION                  = '1.2.4';
 	const OPTION                   = 'a8c_developer';
 	const PAGE_SLUG                = 'a8c_developer';
 
@@ -140,12 +140,6 @@ class Automattic_Developer {
 				'name'		=> esc_html__( 'Pig Latin', 'a8c-developer' ),
 				'active'	=> class_exists( 'PigLatin' ),
 			),
-			'wordpress-beta-tester' => array(
-				'project_type' => 'all',
-				'name'         => esc_html__( 'Beta Tester', 'a8c-developer' ),
-				'active'       => class_exists( 'wp_beta_tester' ),
-				'filename'     => 'wp-beta-tester.php',
-			),
 			'mp6' => array(
 				'project_type' => 'wpcom-vip',
 				'name' 		   => esc_html__( 'MP6', 'a8c-developer' ),
@@ -180,6 +174,15 @@ class Automattic_Developer {
 				'active'       => function_exists( 'tc_add_headers' ),
 			),
 		);
+
+		if ( ! self::is_dev_version() ) {
+			$this->recommended_plugins['wordpress-beta-tester'] = array(
+				'project_type' => 'all',
+				'name'         => esc_html__( 'Beta Tester', 'a8c-developer' ),
+				'active'       => class_exists( 'wp_beta_tester' ),
+				'filename'     => 'wp-beta-tester.php',
+			);
+		}
 
 		$this->recommended_constants = array(
 			'WP_DEBUG'    => array(
@@ -482,7 +485,7 @@ class Automattic_Developer {
 
 		// Constants
 		add_settings_section( 'a8c_developer_constants', esc_html__( 'Constants', 'a8c-developer' ), array( $this, 'settings_section_constants' ), self::PAGE_SLUG . '_status' );
-		
+
 		$recommended_constants = $this->get_recommended_constants();
 
 		foreach ( $recommended_constants as $constant => $constant_details ) {
@@ -622,9 +625,7 @@ class Automattic_Developer {
 	}
 
 	public function settings_field_setting_development_version() {
-		$cur = get_preferred_from_update_core();
-
-		if ( $cur->response == 'development' ) {
+		if ( self::is_dev_version() ) {
 			echo '<span class="a8c-developer-active">' . esc_html__( 'ENABLED', 'a8c-developer' ) . '</span>';
 		} else {
 			echo '<a href="'. network_admin_url( 'update-core.php' ) .'" class="a8c-developer-notactive">' . esc_html__( 'DISABLED', 'a8c-developer' ) . '</a>';
@@ -707,11 +708,11 @@ class Automattic_Developer {
 	 * @return object The response object containing plugin details
 	 */
 	public function get_plugin_details( $slug ){
-		$cache_key = 'a8c_developer_plugin_details_' . $slug;
+		$cache_key = 'a8c_dev_details_' . $slug;
 
 		if ( false === ( $details = get_transient( $cache_key ) ) ) {
 			$request = wp_remote_get( 'http://api.wordpress.org/plugins/info/1.0/' . esc_url( $slug ), array( 'timeout' => 15 ) );
-		
+
 			if ( is_wp_error( $request ) ) {
 				$details = new WP_Error('a8c_developer_plugins_api_failed', __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="http://wordpress.org/support/">support forums</a>.' ), $request->get_error_message() );
 			} else {
@@ -732,7 +733,7 @@ class Automattic_Developer {
 	 *
 	 * Only returns plugins that have been recommended for the project type defined
 	 * in $this->settings['project_type']
-	 * 
+	 *
 	 * @return array An array of plugins recommended for the current project type
 	 */
 	public function get_recommended_plugins() {
@@ -741,7 +742,7 @@ class Automattic_Developer {
 
 	/**
 	 * Return an array of all plugins recommended for the given project type
-	 * 
+	 *
 	 * @param  string $type The project type to return plugins for
 	 * @return array An associative array of plugins for the project type
 	 */
@@ -763,7 +764,7 @@ class Automattic_Developer {
 	 *
 	 * Determines whether or not a given $plugin_slug is recommended for a given $project_type
 	 * by checking the project types defined for it
-	 * 
+	 *
 	 * @param  string $plugin_slug The plugin slug to check
 	 * @param  string $project_type The project type to check the plugin against
 	 * @return bool Boolean indicating if the plugin is recommended for the project type
@@ -787,7 +788,7 @@ class Automattic_Developer {
 	 *
 	 * Only returns constants that have been recommended for the project type defined
 	 * in $this->settings['project_type']
-	 * 
+	 *
 	 * @return array An array of constants recommended for the current project type
 	 */
 	public function get_recommended_constants() {
@@ -796,7 +797,7 @@ class Automattic_Developer {
 
 	/**
 	 * Return an array of all constants recommended for the given project type
-	 * 
+	 *
 	 * @param  string $type The project type to return constants for
 	 * @return array An associative array of constants for the project type
 	 */
@@ -818,7 +819,7 @@ class Automattic_Developer {
 	 *
 	 * Determines whether or not a given $constant is recommended for a given $project_type
 	 * by checking the project types defined for it
-	 * 
+	 *
 	 * @param  string $constant The constant to check
 	 * @param  string $project_type The project type to check the constant against
 	 * @return bool Boolean indicating if the constant is recommended for the project type
@@ -843,6 +844,11 @@ class Automattic_Developer {
 			'wporg-theme' => __( 'Theme for a self-hosted WordPress installation', 'a8c-developer' ),
 			'wpcom-vip'   => __( 'Theme for a <a href="http://vip.wordpress.com" target="_blank">WordPress.com VIP</a> site', 'a8c-developer' ),
 		);
+	}
+
+	private static function is_dev_version() {
+		$cur = get_preferred_from_update_core();
+		return $cur->response == 'development';
 	}
 }
 

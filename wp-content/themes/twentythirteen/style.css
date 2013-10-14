@@ -789,8 +789,6 @@ img.wp-smiley,
  */
 
 .site {
-	border-left: 1px solid #f2f2f2;
-	border-right: 1px solid #f2f2f2;
 	margin: 0 auto;
 	max-width: 1600px;
 	width: 100%;
@@ -2264,7 +2262,10 @@ footer.entry-meta {
 
 /* Comment form */
 .comment-respond {
-    border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    -webkit-border-top-left-radius: 24px;
+    -webkit-border-top-right-radius: 24px;
 	background-color: #f7f5e7;
 	padding: 30px 0;
 }
