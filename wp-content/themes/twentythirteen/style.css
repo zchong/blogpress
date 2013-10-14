@@ -94,8 +94,8 @@ audio:not([controls]) {
 html {
 	font-size: 100%;
 	overflow-y: scroll;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 120%;
+	-ms-text-size-adjust: 120%;
 }
 
 html,
@@ -103,7 +103,7 @@ button,
 input,
 select,
 textarea {
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
 }
 
 body {
@@ -469,7 +469,7 @@ hr {
 	margin: 0 0 24px;
 }
 
-#header-separator{
+.separator{
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -480,6 +480,9 @@ hr {
     border-right: 0 none;
     border-style: solid none;
     border-width: 1px 0;
+}
+
+#intro{
     margin-top: 45px;
     margin-bottom: 20px;
     margin-left: 60px;
@@ -880,7 +883,7 @@ div.nav-menu > ul {
 /* control navigation */
 .nav-menu li a {
     font: 400 20px "Open Sans", Helvetica, sans-serif;
-	color: #141412;
+	color: #ffffff;
 	display: block;
 	font-size: 15px;
 	line-height: 1;
@@ -922,7 +925,7 @@ ul.nav-menu ul a,
 
 ul.nav-menu ul a:hover,
 .nav-menu ul ul a:hover {
-	background-color: #db572f;
+	background-color: #2C9EC5;
 }
 
 ul.nav-menu li:hover > ul,
@@ -934,7 +937,7 @@ ul.nav-menu li:hover > ul,
 .nav-menu .current_page_ancestor > a,
 .nav-menu .current-menu-item > a,
 .nav-menu .current-menu-ancestor > a {
-	color: #bc360a;
+	color: #000000;
 	font-style: italic;
 }
 
@@ -944,7 +947,7 @@ ul.nav-menu li:hover > ul,
 
 /* Navbar */
 .navbar {
-    background: none repeat scroll rgba(247,245, 231, 0.8);
+    background: none repeat scroll rgba(110, 120, 120, 0.9);
 	margin: 0 auto;
 	max-width: 1600px;
 	width: 100%;
@@ -1877,7 +1880,7 @@ footer.entry-meta {
 }
 
 .paging-navigation {
-	background-color: #e8e5ce;
+	background-color: #ffffff;
 	padding: 40px 0;
 }
 
@@ -1924,7 +1927,7 @@ footer.entry-meta {
 }
 
 .paging-navigation a:hover .meta-nav {
-	background-color: #ea9629;
+	background-color: rgba(239, 150, 41, 0.5);
 	text-decoration: none;
 }
 
@@ -2532,8 +2535,8 @@ footer.entry-meta {
  */
 
 .site-footer {
-	background-color: #e8e5ce;
-	color: #686758;
+	background-color: #ffffff;
+	color: #000000;
 	font-size: 14px;
 	text-align: center;
 }
@@ -2548,7 +2551,7 @@ footer.entry-meta {
 }
 
 .site-footer .sidebar-container {
-	background-color: #220e10;
+	background-color: #ffffff;
 	padding: 20px 0;
 }
 
@@ -2588,7 +2591,7 @@ footer.entry-meta {
 .site-footer .widget-title,
 .site-footer .widget-title a,
 .site-footer .wp-caption-text {
-	color: #fff;
+	color: #000;
 }
 
 .site-info {

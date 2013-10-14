@@ -47,5 +47,5 @@
             </div>
 
 		</header><!-- #masthead -->
-        <div id="header-separator"></div>
+        <div id="intro" class="separator"></div>
 		<div id="main" class="site-main">
