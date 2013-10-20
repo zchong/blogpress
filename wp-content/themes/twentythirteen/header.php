@@ -43,7 +43,7 @@
             </div><!-- #navbar -->
             <div class="home-link" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                 <h1 class="site-title"><a id="site-home-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                <!--<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
             </div>
 
 		</header><!-- #masthead -->

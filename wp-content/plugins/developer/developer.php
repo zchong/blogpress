@@ -5,7 +5,7 @@
 Plugin Name:  Developer
 Plugin URI:   http://wordpress.org/extend/plugins/developer/
 Description:  The first stop for every WordPress developer
-Version:      1.2.4
+Version:      1.2.5
 Author:       Automattic
 Author URI:   http://automattic.com
 License:      GPLv2 or later
@@ -25,7 +25,7 @@ class Automattic_Developer {
 	public $settings               = array();
 	public $default_settings       = array();
 
-	const VERSION                  = '1.2.4';
+	const VERSION                  = '1.2.5';
 	const OPTION                   = 'a8c_developer';
 	const PAGE_SLUG                = 'a8c_developer';
 
@@ -136,7 +136,7 @@ class Automattic_Developer {
 				'active'       => class_exists( 'user_switching' ),
 			),
 			'piglatin' => array(
-				'project_type' 	=> 'all',
+				'project_type' 	=> array( 'wporg-theme', 'wporg' ),
 				'name'		=> esc_html__( 'Pig Latin', 'a8c-developer' ),
 				'active'	=> class_exists( 'PigLatin' ),
 			),
@@ -708,7 +708,7 @@ class Automattic_Developer {
 	 * @return object The response object containing plugin details
 	 */
 	public function get_plugin_details( $slug ){
-		$cache_key = 'a8c_dev_details_' . $slug;
+		$cache_key = md5( 'a8c_developer_plugin_details_' . $slug );
 
 		if ( false === ( $details = get_transient( $cache_key ) ) ) {
 			$request = wp_remote_get( 'http://api.wordpress.org/plugins/info/1.0/' . esc_url( $slug ), array( 'timeout' => 15 ) );
@@ -775,12 +775,10 @@ class Automattic_Developer {
 
 		$plugin_details = $this->recommended_plugins[ $plugin_slug ];
 
-		if ( 'all' === $plugin_details['project_type'] ||
-			$plugin_details['project_type'] === $project_type ||
-			( is_array( $plugin_details['project_type'] ) && in_array( $project_type, $plugin_details['project_type'] ) ) )
-				return true;
+		if ( 'all' == $plugin_details['project_type'] )
+			return true;
 
-		return false;
+		return self::is_project_type( $plugin_details, $project_type );
 	}
 
 	/**
@@ -830,12 +828,10 @@ class Automattic_Developer {
 
 		$constant_details = $this->recommended_constants[ $constant ];
 
-		if ( 'all' === $constant_details['project_type'] ||
-			$constant_details['project_type'] === $project_type ||
-			( is_array( $constant_details['project_type'] ) && in_array( $project_type, $constant_details['project_type'] ) ) )
-				return true;
+		if ( 'all' == $constant_details['project_type'] )
+			return true;
 
-		return false;
+		return self::is_project_type( $constant_details, $project_type );
 	}
 
 	public function get_project_types() {
@@ -849,6 +845,15 @@ class Automattic_Developer {
 	private static function is_dev_version() {
 		$cur = get_preferred_from_update_core();
 		return $cur->response == 'development';
+	}
+
+	private static function is_project_type( $project, $type ) {
+		$project_type = $project['project_type'];
+
+		if ( is_array( $project_type ) )
+			return in_array( $type, $project_type );
+
+		return $project_type == $type;
 	}
 }
 

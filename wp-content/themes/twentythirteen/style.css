@@ -38,6 +38,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   5.11 - 404
  *   5.12 - Comments
  *   5.13 - Multisite
+ *   5.14 - Post Meta (TLDR Section)
  * 6.0 - Sidebar
  *   6.1 - Widgets
  * 7.0 - Footer
@@ -2461,6 +2462,42 @@ footer.entry-meta {
 	width: auto;
 }
 
+/**
+ * 5.14 Post Meta (TLDR Section)
+ * ----------------------------------------------------------------------------
+ */
+.post-meta {
+    list-style-type: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #dedede;
+    width: 90%;
+    padding: 10px;
+    color: blue;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+
+    transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s;
+    -webkit-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s;
+    -moz-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s;
+    -o-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s;
+}
+
+.post-meta:hover {
+    border-color: rgba(41, 92, 161, 0.4);
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(41, 92, 161, 0.6);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(41, 92, 161, 0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(41, 92, 161, 0.6);
+    outline: 0 none;
+}
+
+.post-meta-key {
+    color: red;
+}
 
 /**
  * 6.0 Sidebar

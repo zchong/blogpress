@@ -18,6 +18,13 @@
 
 		<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+            <?php
+            $theMeta = get_post_meta($post->ID, 'TLDR', TRUE);
+            if ($theMeta != '')
+            {
+                the_meta();
+            }
+            ?>
 		<?php else : ?>
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
