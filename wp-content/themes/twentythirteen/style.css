@@ -2497,6 +2497,7 @@ footer.entry-meta {
 
 .post-meta-key {
     color: red;
+    margin: 5px;
 }
 
 /**
@@ -3141,7 +3142,7 @@ footer.entry-meta {
 
 	.site-header .search-field {
         opacity: 1.0;
-		background-image: url(images/white-search-icon-2x.png);
+		background-image: url(images/white-search-icon@2x.png);
 	}
 
 	.format-audio .audio-content,
@@ -3149,7 +3150,7 @@ footer.entry-meta {
 	.format-status .entry-meta:before,
 	.comment-list > li:after,
 	.comment-list .children > li:before {
-		background-image: url(images/dotted-line-2x.png);
+		background-image: url(images/dotted-line@2x.png);
 	}
 }
 
