@@ -111,6 +111,7 @@ body {
 	color: #141412;
 	line-height: 1.5;
 	margin: 0;
+    min-width: 600px;
 }
 
 a {
@@ -916,6 +917,16 @@ img.wp-smiley,
 	max-width: 1080px;
 	min-height: 45px;
 	position: relative;
+}
+
+.head-image {
+    background-image: url(../../uploads/2013/10/goblin-150x150.png);
+    background-size: contain;
+    float: right;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 85%;
 }
 
 ul.nav-menu,
@@ -2496,7 +2507,7 @@ footer.entry-meta {
 }
 
 .post-meta-key {
-    color: red;
+    color: mediumvioletred;
     margin: 5px;
 }
 

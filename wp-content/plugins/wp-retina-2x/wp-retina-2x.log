@@ -1,0 +1,20 @@
+** RETINA INFO FOR ATTACHMENT '2013/10/goblin.png' **
+- Original: goblin.png
+- thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-150x150.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-150x150@2x.png => RESIZE
+- medium: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-300x300.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-300x300@2x.png => RESIZE
+- large => IGNORED
+- post-thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-604x270.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-604x270@2x.png => FAIL
+** RETINA INFO FOR ATTACHMENT '2013/10/goblin-head@2x.png' **
+- Original: goblin-head@2x.png
+- thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150@2x.png => COPY
+- thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150@2x.png => RESIZE
+- medium => MISSING
+- large => IGNORED
+- post-thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-300x270.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-300x270@2x.png => FAIL
+** RETINA INFO FOR ATTACHMENT '2013/10/goblin-head@2x.png' **
+- Original: goblin-head@2x.png
+- thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150@2x.png => COPY
+- thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-150x150@2x.png => RESIZE
+- medium => MISSING
+- large => IGNORED
+- post-thumbnail: /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-300x270.png -> /Applications/MAMP/htdocs/teamgoblin/wp-content/uploads/2013/10/goblin-head@2x-300x270@2x.png => FAIL
