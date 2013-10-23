@@ -887,6 +887,7 @@ function display_header_text() {
  */
 function get_header_image() {
 	$url = get_theme_mod( 'header_image', get_theme_support( 'custom-header', 'default-image' ) );
+
 	if ( 'remove-header' == $url )
 		return false;
 
