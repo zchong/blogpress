@@ -52,18 +52,8 @@
      * Enables fixed scrolling navigation bar
      */
     ( function() {
-        $(window).scroll(function() {
-                if ($(window).scrollTop())
-                {
-                    $('#navbar').addClass('fixed').css('top','0').css('z-index', '2').next().css('padding-top', '45px');
-                }
-                else
-                {
-                    $('#navbar').removeClass('fixed').css('z-index', 'auto').next().css('padding-top', '0px', 'z-index', 'auto');
-                }
-            }
-
-        )
+    	$('#navbar').addClass('fixed').css('top','0').css('z-index', '2').next().css('padding-top', '45px');
+        
     })();
 
 	/**
