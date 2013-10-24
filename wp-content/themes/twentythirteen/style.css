@@ -922,11 +922,21 @@ img.wp-smiley,
 .head-image {
     background-image: url(../../uploads/2013/10/goblin-150x150.png);
     background-size: contain;
-    float: right;
-    position: relative;
+    margin-left: -350px;
+    position: absolute;
     background-repeat: no-repeat;
     height: 100%;
     width: 85%;
+    overflow:hidden;
+    text-indent:100%;
+    white-space:nowrap;
+    opacity: 0.6;
+    transition: opacity 0.3s linear 0.3s;
+}
+
+.head-image:hover {
+    opacity: 1.0;
+    transition: opacity 0.3s linear 0.3s;
 }
 
 ul.nav-menu,
