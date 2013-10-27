@@ -53,13 +53,31 @@
      */
     ( function() {
         $(window).scroll(function() {
+                var navBar = $('#navbar');
+
                 if ($(window).scrollTop())
                 {
-                    $('#navbar').addClass('fixed').css('top','0').css('z-index', '2').next().css('padding-top', '45px');
+                    navBar.addClass('fixed').css('top','0').css('z-index', '2');
+                    if ($('.home-link').length)
+                    {
+                        navBar.next().css('padding-top', '45px');
+                    }
+                    else
+                    {
+                        navBar.parent().css('padding-top', '45px');
+                    }
                 }
                 else
                 {
-                    $('#navbar').removeClass('fixed').css('z-index', 'auto').next().css('padding-top', '0px', 'z-index', 'auto');
+                    navBar.removeClass('fixed').css('z-index', 'auto');
+                    if ($('.home-link').length)
+                    {
+                        navBar.next().css('padding-top', '0px');
+                    }
+                    else
+                    {
+                        navBar.parent().css('padding-top', '0px');
+                    }
                 }
             }
 
